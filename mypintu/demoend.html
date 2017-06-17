@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/pintuer.css" />
+		<link rel="stylesheet" href="css/mycss.css" />
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script type="text/javascript" src="js/pintuer.js" ></script>
+		<script type="text/javascript" src="js/myjs.js" ></script>
+		<script type="text/javascript" src="js/respond.js" ></script>
+		<style>
+		*{margin: 0;padding: 0;}
+			.mywidth{
+				width: 100%;
+				/*height: 560px;*/
+				background: #f0f7ff;
+			}
+			ul,li{margin: 0;padding: 0;list-style: none;}
+			/*top*/
+			.mytop{
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 160px;
+				width: 100%;
+				background: url(img/bigbg.png);
+				z-index: 99;
+				
+			}
+			.mytop_left{
+				width: 300px;
+				height: 90px;
+				/*border: 1px solid red;*/
+				background: url(img/logo.png) no-repeat 50px center;
+				float: left;
+			}
+			.mytop_right{
+				float: left;
+				/*border: 1px solid red;*/
+			}
+			.mytop_right ul{
+				line-height: 70px;
+				
+			}
+			.mytop_right ul li{
+				float: left;
+				margin-right: 30px;
+				/*margin-left: 30px;*/
+				color: #fff;
+				font-family: "微软雅黑";
+				cursor: pointer;
+				width: 100px;
+				text-align: center;
+				/*transition: all 1s;*/
+			}
+			.mytop_right ul li:hover{
+				color: #208ce6;
+				background-color:#fff ;
+			}
+			.mytop_right ul li:hover .myul2{
+				display: block;
+				
+			}
+			.mytop_right ul li .myul2{
+				border-top: 4px solid #208CE6;
+				background-color: #fff;
+				width: 90px;
+				/*height: 252px;*/
+				margin: 0 auto;
+				display: none;
+				
+			}
+			.mytop_right ul li .myul2 li{
+				margin-top: 5px;
+				clear: both;
+				height: 40px;
+				line-height: 40px;
+				width: 90px;
+				position: relative;
+				left: 0px;
+				text-align: center;
+				/*border: 1px solid red*/;
+				color: black;
+			}
+			.mytop_right ul li .myul2 li:hover{
+				color: #208ce6;
+			}
+			/*myline*/
+			.myline{
+				clear: both;
+				width: 90%;
+				height: 180px;
+				/*border: 1px solid red;*/
+				margin: 0 auto;
+				position: relative;
+				top: -95px;
+				margin-bottom: 0;
+			}
+			.myline h1{
+				font-size: 38px;
+			}
+			.myline_left{
+				float: left;
+				width: 50%;
+				height: 180px;
+				text-align: center;
+				padding-top: 50px;
+				color: #fff;
+				cursor: pointer;
+				background: rgba(32,140,320,0.9);
+			}
+			.myline_left:hover{
+				background: rgba(32,140,320,0.8);
+				/*box-shadow: 0 0 10px #208CE6;*/
+			}
+			.myline_left:hover h1{
+				font-size: 42px;
+			}
+			.myline_right{
+				float: left;
+				width: 50%;
+				height: 180px;
+				text-align: center;
+				padding-top: 50px;
+				color: #fff;
+				cursor: pointer;
+				background: rgba(126,211,36,0.9);
+			}
+			.myline_right:hover{
+				background: rgba(126,211,36,0.8);
+				/*box-shadow: 0 0 10px #208CE6;*/
+			}
+			.myline_right:hover h1{
+				font-size: 42px;
+			}
+			.mybutton_group{
+				margin-top: 20px;
+			}
+			.myzhu{
+				background: #fff;
+				color: #208CE6;				
+				width: 90px;
+				height: 35px;
+				line-height: 35px;
+				text-align: center;
+				border-radius:30px ;
+				margin-left: 10px;
+				display: inline-block;
+				cursor: pointer;
+			}
+			.mydeng{
+				background: #208CE6;
+				color:#fff ;
+				width: 90px;
+				height: 35px;
+				line-height: 35px;
+				text-align: center;
+				display: inline-block;
+				border-radius:30px ;
+				cursor: pointer;
+			}
+			/*低风险*/
+			.mydi{
+				position: relative;
+				top: -90px;
+				clear: both;
+				width: 90%;
+				height: 180px;
+				/*border: 1px solid black;*/
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			.mydi li{
+				float: left;
+				width: 298px;
+				height: 180px;
+				text-align: left;
+				/*border: 1px solid red;*/
+				background: #fff;
+				cursor: pointer;
+			} 
+			.mydi li:hover .mydi_hide{
+				/*display: block;*/
+				top: -165px;
+			}
+			.mydi_hide{
+				width: 298px;
+				height: 180px;
+				background: rgba(240,167,52,0.7);
+				position: relative;
+				top: 16px;
+				left: 0;
+				/*display: none;*/
+				padding: 10px;
+				transition: all 1s;
+			}
+			.mydi_hide p{
+				color: #fff;
+				line-height: 25px;
+			}
+			.mydi_hide .mymore
+			{
+				display: block;
+				width: 80px;
+				height: 25px;
+				border-radius:30px ;
+				background: #fff;
+				color: #f0a734;
+				text-align: center;
+				line-height: 25px;
+				margin: 50px auto;
+				
+			}
+			.mymagin
+			{
+				margin-left: 6px;
+			}
+			.mydi li h1
+			{
+				margin-top: 95px;
+				margin-left: 30px;
+			}
+			.mydi li p
+			{
+				margin-left: 30px;
+			}
+			/*公告*/
+			.mygab{
+				width: 90%;
+				height: 50px;
+				line-height: 50px;
+				/*border: 1px solid red;*/
+				margin: 0 auto;
+				position: relative;
+				top: -83px;
+				background: #fff;
+				padding-left: 20px;
+			}
+			.mygab_span{
+				color: #646464;
+				font-weight: bold;
+				font-size: 20px;
+			}
+			.mygab_a:hover{
+				text-decoration: underline;
+				color: #208CE6;
+			}
+			.mygab_a{
+				font-size: 12px;
+				font-weight: bold;
+			}
+			.mygab_amig{
+				margin-left: 25px;
+			}
+			.mymore_a{
+				margin-left: 300px;
+				color: #208CE6;
+			}
+			a:hover{
+				color: #1970b9;
+			}
+			/*产品信息*/
+			.mynoon{
+				position: relative;
+			}
+			.mycontainer
+			{
+				width: 20%;
+				margin: 0 auto;
+				/*border: 1px solid black;*/
+			}
+			.mycontainer h1{
+				margin-left: 65px;
+				font-size: 18px;
+				font-weight: bold;
+			}
+			.mycontainer_a{
+				display: block;
+				width: 93%;
+				text-align: right;
+				float: left;
+				/*background: red;*/
+				color: #208CE6;
+				position: absolute;
+				top: 30px;
+			}
+			/*投标*/
+			.toubiao{
+				width: 90%;
+				margin: 50px auto;
+				/*border: 1px solid black;*/
+			}
+			.toubiao li{
+				width: 283px;
+				height: 350px;
+				float: left;
+				border: 1px solid #ccc;
+				cursor: pointer;
+				/*background: #fff;*/
+			}
+			.toubiao li:hover{
+				box-shadow: 0px 0px 20px #ccc;
+				border: 1px solid #208CE6;
+			}
+			.toubiao li:hover .mycolordiv h1{
+				font-size: 43px;
+			}
+			.toubiao li p{
+				text-align: center;
+				font-size: 16px;
+				padding-top: 20px;
+			}
+			.toubiao li:hover p{
+				font-size: 18px;
+			}
+			.toubiao li span{
+				margin-top: 0px;
+				text-align: center;
+				display: block;
+			}
+			.mycolordiv{
+				width: 100%;
+				height: 150px;
+				margin-top: 30px;
+				background: #208CE6;
+				border: 1px solid red;
+			}
+			.mycenter
+			{
+				text-align: center;
+				color: #fff;
+			}
+			.mycolordiv h1{				
+				padding-top: 40px;
+				font-size: 40px;
+				margin-bottom: 15px;
+				transition: all 0.5s;
+			}
+			.mybuttons_shouwan{
+				margin-left: 70px;
+				margin-top: 30px;
+				width: 150px;
+				height: 40px;
+				background: #ccc;
+				border: none;
+				color: #fff;
+			}
+			.mybuttons_shouwan:hover{
+				background: #ccc;
+				border: none;
+				color: #fff;
+			}
+			.mybuttons{
+				margin-left: 70px;
+				margin-top: 30px;
+				width: 150px;
+				height: 40px;
+				border: 1px solid #ccc;
+			}
+			.toubiao li:hover .mybuttons{
+				background: #208CE6;
+				border: none;
+				color: #fff;
+			}
+			.shouwan{
+				width: 100%;
+				height: auto;
+				/*border: 1px solid red;*/
+				background: url(img/shouwan.png) no-repeat right top;
+				margin-bottom: 0;
+			}
+			/*新闻部分*/
+			.mynews{
+				clear: both;
+				height: 750px;
+				position: relative;
+				top: 95px;
+			}
+			.mynews_biaoti h1{
+				/*border: 1px solid red;*/
+				text-align: center;
+				padding-top: 60px;
+				font-size: 18px;
+				font-weight: bold;
+			}
+			.mynews_a{
+				padding-top: 36px;
+				/*border: 1px solid red;*/
+			}
+			.mynews_contin{
+				width: 90%;
+				margin: 40px auto;
+				/*border: 1px solid red;*/
+			}
+			.mynews_contin_left{
+				float: left;
+			}
+			.mynews_contin_right{
+				float: left;
+				margin-left: 20px;
+				width: 52%;
+				/*border: 1px solid red;*/
+				cursor: pointer;
+				/*line-height: 30px;*/
+				/*margin-top: 10px;*/
+			}
+			.right_frits:hover p,.right_frits:hover h3{
+				color: #208CE6;
+			}
+			.right_frits h3{
+				float: left;
+				font-size: 16px;
+				/*line-height: 40px;*/
+				/*border: 1px solid red;*/
+			}
+			.right_frits p{
+				float: right;
+				color: #959291;
+				margin-bottom: 3px;
+				/*margin-top: 3px;*/
+				/*border: 1px solid red;*/
+			}
+			.pclear{
+				clear: both;
+				color: #959291;
+				/*border: 1px solid red;*/
+			}
+			.baodao{
+				clear: both;
+				width: 100%;
+				/*border: 1px solid red;*/
+				padding-top: 30px;
+			}
+			.baodao h1{
+				text-align: center;
+			}
+			.baodao ul{
+				/*border: 1px solid red;*/
+				margin-top: 50px;
+			}
+			.baodao ul li{
+				float: left;
+				width: 180px;
+				/*border: 1px solid red;*/
+				height: 50px;
+				line-height: 50px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class="mywidth border border-red">
+			<!--top-->
+			<div class="mytop">
+				<div class="mytop_left"></div>
+				<div class="mytop_right">
+					<ul>
+						<li><span class="icon icon-mobile myfontsize"></span>   APP</li>
+						<li>我要投诉
+							<ul class="myul2 ">
+								<li>散标列表</li>
+								<li>债券交易</li>
+								<li>列表列表</li>
+								<li>月月张</li>
+								<li>拍火爆</li>
+								<li>新手专区</li>
+							</ul>
+						</li>
+						<li>我要借款
+							<ul class="myul2">
+								<li>散标列表</li>
+								<li>债券交易</li>
+								<li>列表列表</li>
+								<li>月月张</li>
+							</ul>
+						</li>
+						<li>我的账户
+							<ul class="myul2">
+								<li>散标列表</li>
+								<li>债券交易</li>
+								<li>列表列表</li>
+								<li>月月张</li>
+								<li>拍火爆</li>
+								<li>新手专区</li>
+								<li>月月张</li>
+							</ul>
+						</li>
+						<li>信息披露
+							<ul class="myul2">
+								<li>散标列表</li>
+								<li>债券交易</li>
+								<li>拍火爆</li>
+								<li>新手专区</li>
+							</ul>
+						</li>
+						<li>帮助/论坛
+							<ul class="myul2">
+								<li>散标列表</li>
+								<li>新手专区</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!---->
+				<div class="mybutton_group">
+					<div class=" mydeng ">
+						登陆  <span class="icon-angle-down"></span></div>
+					<div  class=" myzhu">
+						注册</div>
+				</div>
+							
+				
+			</div>
+			<!--banner-->
+			<div class="banner mywidth">
+				<div class="carousel">
+					<div class="item">
+						<img src="img/play1.jpg" />
+					</div>
+					<div class="item">
+						<img src="img/play2.jpg" />
+					</div>
+					<div class="item">
+						<img src="img/play3.jpg" />
+					</div>
+					<div class="item">
+						<img src="img/play4.jpg" />
+					</div>
+				</div>
+			</div>
+			<!--banner下的浮动开始-->
+			<div class="myline">
+				<div class="myline_left">
+					<h1>我要借款</h1>
+					<p>简单、快速、借的到</p>
+				</div>
+				<div class="myline_right">
+					<h1>我要投资</h1>
+					<p>2015年平均收益12%-20%</p>
+				</div>
+			</div>
+			<!--低门槛-->
+			<div class="mydi">
+				<ul>
+					<li>
+						<h1>大数据</h1>
+						<p>基于“魔镜”大数据分析</p>
+						<div class="mydi_hide">
+							<p>基于”大数据分析基于“魔镜”大数据分析基于“魔镜”大数据分析基于</p>
+							<span class="mymore">更多</span>
+						</div>
+					</li>
+					<li class="mymagin">
+						<h1>安全</h1>
+						<p>基于“魔镜”大数据分析</p>
+						<div class="mydi_hide">
+							<p>基于”大数据分析基于“魔镜”大数据分析基于“魔镜”大数据分析基于</p>
+							<span class="mymore">更多</span>
+						</div>
+					</li>
+					<li class="mymagin">
+						<h1>低门槛</h1>
+						<p>基于“魔镜”大数据分析</p>
+						<div class="mydi_hide">
+							<p>基于”大数据分析基于“魔镜”大数据分析基于“魔镜”大数据分析基于</p>
+							<span class="mymore">更多</span>
+						</div>
+					</li>
+					<li class="mymagin">
+						<h1>高收益</h1>
+						<p>基于“魔镜”大数据分析</p>
+						<div class="mydi_hide">
+							<p>基于”大数据分析基于“魔镜”大数据分析基于“魔镜”大数据分析基于</p>
+							<span class="mymore">更多</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="mygab">
+				<span class="icon-volume-up mygab_span"></span>
+				<span><strong>&nbsp;公告  :</strong></span>
+				<a href="#" class="mygab_a">【公告】停机维护公告</a>
+				<a href="#" class="mygab_a mygab_amig">
+【公告】提现到账情况公告</a>
+				<a href="#" class="mygab_a mygab_amig">
+【公告】“质量保障服务”上线公告</a>
+				<a href="#" class="mygab_a mygab_amig">
+【公告】2016年国庆假期工作安排通...</a>
+				<a href="#" class="mymore_a">更多...</a>
+			</div>
+			
+			<!--产品信息-->
+			<div class="mynoon">
+				<div class="mycontainer">
+				<h1>投资产品信息</h1>
+				<p>高收益，低风险，安心省心的理财首选</p>
+			</div>
+			<a href="#" class="mycontainer_a">更多...</a>
+			</div>
+			<!--投标-->
+			<div class="toubiao">
+				<ul>
+					<li>
+						<div class="shouwan">
+							<p>月月涨</p>
+							<span>11月起|周二上午11点售货</span>
+						</div>
+						<div class="mycolordiv">
+							<h1 class="mycenter">6.5%~10%</h1>
+							<h4 class="mycenter">平均年化收益</h4>
+						</div>
+						<button type="button" class="button mybuttons_shouwan">
+						已售完</button>
+					</li>
+					<li class="mygab_amig">
+						<p>月月涨</p>
+						<span>11月起|周二上午11点售货</span>
+						<div class="mycolordiv">
+							<h1 class="mycenter">6.5%~10%</h1>
+							<h4 class="mycenter">平均年化收益</h4>
+						</div>
+						<button type="button" class="button mybuttons">
+						马上投诉</button>
+					</li>
+					<li class="mygab_amig">
+						<p>月月涨</p>
+						<span>11月起|周二上午11点售货</span>
+						<div class="mycolordiv">
+							<h1 class="mycenter">6.5%~10%</h1>
+							<h4 class="mycenter">平均年化收益</h4>
+						</div>
+						<button type="button" class="button mybuttons">
+						立即抢购</button>
+					</li>
+					<li class="mygab_amig">
+						<p>月月涨</p>
+						<span>11月起|周二上午11点售货</span>
+						<div class="mycolordiv">
+							<h1 class="mycenter">6.5%~10%</h1>
+							<h4 class="mycenter">平均年化收益</h4>
+						</div>
+						<button type="button" class="button mybuttons">
+						立即抢购</button>
+					</li>
+				</ul>
+			</div>
+			
+			<!--新闻-->
+			<div class="bg-white mynews">
+				<div class="mynews_biaoti">
+					<h1>公司咨询</h1>
+					<a href="#" class="mycontainer_a mynews_a">更多...</a>
+				</div>
+				<div class="mynews_contin">
+					<div class="mynews_contin_left">
+						<img style="cursor: pointer;" src="img/videoimg.png" />
+					</div>
+					<div class="mynews_contin_right">
+						<div class="mynews_right_div">
+							<div class="right_frits">
+								<h3>互联网金融监管出重拳</h3>
+								<p>2016-10-24 人民日报 海外版</p>
+							</div>
+							<p class="pclear"> 国务院办公厅日前公布《互联网金融风险专项整治工作实施方案》（下称《方案》），由17个部门联合开展针对互联网金融的专项整治...</p>
+						</div>
+						
+						<div class="mynews_right_div margin-big-top">
+							<div class="right_frits">
+								<h3> 网贷成交增速放缓大平台将“赢者通吃”</h3>
+								<p>2016-10-18 证券日报</p>
+							</div>
+							<p class="pclear">&nbsp;&nbsp;&nbsp;<span class="icon-circle text-small"></span>证券日报记者 张 歆　　国务院日前出台互金专项整治方案，距8月24日《网贷机构业务活动管理暂行办法》发布不到2个月。...</p>
+						</div>
+						
+						<div class="mynews_right_div margin-big-top">
+							<div class="right_frits">
+								<h3> 互金信息共享平台开通 拍拍贷首批接入</h3>
+								<p>22016-09-11 财经网</p>
+							</div>
+							<p class="pclear"> 9月9日，互联网金融行业信用信息共享平台开通启动会正式于北京召开。启动会涵盖了网络借贷、第三方支付、消费金融等互联网金融..</p>
+						</div>
+						
+						<div class="mynews_right_div margin-big-top">
+							<div class="right_frits">
+								<h3>上海法院创新诉讼手段打击线上“老赖”</h3>
+								<p>2016-08-23 新华网</p>
+							</div>
+							<p class="pclear">互联网金融的普及，使线上借贷成为不少“老赖”聚集的法外之地。为保护债权人合法权益，维护良好的社会信用体系，上海法院日前支...
+</p>
+						</div>
+					</div>
+					
+					<!--媒体报道-->
+					<div class="baodao">
+						<h1>媒体报道</h1>
+						<ul>
+							<li><img src="img/cctv.png"/></li>
+							<li class="mygab_amig mycenter"><img src="img/people.png"</li>
+							<li class="mygab_amig mycenter"><img src="img/no1net.png"</li>
+							<li class="mygab_amig mycenter"><img src="img/cjwang.png"</li>
+							<li class="mygab_amig mycenter"><img src="img/fenghangnet.png"</li>
+							<li style="text-align: right;margin-left: 30px;"><img src="img/sohunet.png"</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		</div>
+	</body>
+</html>
